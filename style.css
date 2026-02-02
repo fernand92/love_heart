@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff0f3;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.canvas {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Bonequinho estilo Mochi */
+.character {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    z-index: 10;
+    width: 120px;
+    height: 100px;
+    background: white;
+    border-radius: 50% 50% 40% 40%;
+    border: 3px solid #333;
+}
+
+.eye {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #333;
+    border-radius: 50%;
+    top: 40%;
+}
+.eye.left { left: 30%; }
+.eye.right { right: 30%; }
+
+.blush {
+    position: absolute;
+    width: 15px;
+    height: 8px;
+    background: #ffccd5;
+    border-radius: 50%;
+    top: 55%;
+}
+.blush.left { left: 15%; }
+.blush.right { right: 15%; }
+
+.mouth {
+    position: absolute;
+    width: 10px;
+    height: 5px;
+    border-bottom: 2px solid #333;
+    border-radius: 50%;
+    top: 50%;
+    left: 45%;
+}
+
+.biu {
+    position: absolute;
+    top: -30px;
+    right: -20px;
+    font-weight: bold;
+    color: #333;
+    font-style: italic;
+}
+
+/* Corações Individuais */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff4d6d;
+    transform: rotate(-45deg);
+    opacity: 0;
+    z-index: 5;
+    transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff4d6d;
+    border-radius: 50%;
+}
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: 10px; top: 0; }
+
+/* Mensagem por cima de tudo */
+#final-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    color: #ff4d6d;
+    font-size: 4rem;
+    font-weight: bold;
+    opacity: 0;
+    z-index: 100; /* Camada superior */
+    transition: opacity 1s;
+    text-shadow: 4px 4px 0px #fff, -1px -1px 0px #fff;
+}
+
+.visible { opacity: 1 !important; }
